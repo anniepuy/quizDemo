@@ -1,0 +1,37 @@
+ [
+    {
+        "question": "Inside which HTML element do we put the JavaScript?",
+        "choice1": "<script>",
+        "choice2": "<javascript>",
+        "choice3": "<jsa>",
+        "choice4": "<scripting",
+        "answer": 1
+    },
+
+    {
+        "question": "Which CSS tag creates an underline on an HTML page?",
+        "choice1": "text-decoration",
+        "choice2": "font-decoration",
+        "choice3": "text-style",
+        "choice4": "font-wieght",
+        "answer": 1
+    },
+
+    {
+        "question": "Which hexadecimal is red",
+        "choice1": "#00FF00",
+        "choice2": "#FF6347",
+        "choice3": "#7B5690",
+        "choice4": "#FF0000",
+        "answer": 4
+    },
+
+    {
+        "question": "What is a good example question?",
+        "choice1": "Bingo",
+        "choice2": "Llamaface",
+        "choice3": "Dinkle tinkle",
+        "choice4": "Jelly Belly",
+        "answer": 2
+    }
+]

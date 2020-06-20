@@ -18,12 +18,11 @@ username.addEventListener("keyup", () => {
 });
 
 saveHighScore = (e) => {
-    console.log("clicked the save button!")
     e.preventDefault();
     //this stops forms from posting to another page
 
     const score = {
-        score : Math.floor(Math.random() * 100),
+        score: mostRecentScore,
         name: username.value
     };
     highScores.push(score);

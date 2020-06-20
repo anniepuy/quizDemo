@@ -10,44 +10,25 @@ let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 
-let questions = [
-    {
-        question: "Inside which HTML element do we put the JavaScript?",
-        choice1: "<script>",
-        choice2: "<javascript>",
-        choice3: "<jsa>",
-        choice4: "<scripting",
-        answer: 1
-    },
+let questions = [];
 
-    {
-        question: "Which CSS tag creates an underline on an HTML page?",
-        choice1: "text-decoration",
-        choice2: "font-decoration",
-        choice3: "text-style",
-        choice4: "font-wieght",
-        answer: 1
-    },
+//API call to a JSON file
+fetch("questions.json").then( res => {
+        console.log(res);
+        return res.json();
+    }).then(loadedQuestions => {
+        console.log(loadedQuestions);
+        questions = loadedQuestions;
+        startGame();
+    })
 
-    {
-        question: "Which hexadecimal is red",
-        choice1: "#00FF00",
-        choice2: "#FF6347",
-        choice3: "#7B5690",
-        choice4: "#FF0000",
-        answer: 4
-    },
+    //handle the error scenrio
+    .catch(err => {
+        console.error(err);
 
-    {
-        question: "What is a good example question?",
-        choice1: "Bingo",
-        choice2: "Llamaface",
-        choice3: "Dinkle tinkle",
-        choice4: "Jelly Belly",
-        answer: 2
-    },
-];
+    });
 
+//Constants
 const CORRECT_BONUS = 10;
 const MAX_QUESTIONS = 3;
 
@@ -61,7 +42,7 @@ startGame = () => {
 getNewQuestion = () => {
 
     if(availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
-        localStorage.setItem('mostRecentScore', score);
+        localStorage.setItem("mostRecentScore", score);
         //go to the end page
         return window.location.assign("/end.html");
     }
@@ -125,4 +106,4 @@ incrementScore = num => {
     scoreText.innerText = score;
 }
 
-startGame();
+
